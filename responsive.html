@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Landing Page</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+/* Navigation Bar */
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:20px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:transparent;
+    transition:0.4s;
+    z-index:1000;
+}
+
+nav.sticky{
+    background:#0f172a;
+    box-shadow:0 5px 10px rgba(0,0,0,0.2);
+}
+
+.logo{
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-size:18px;
+    transition:0.3s;
+    padding:8px 12px;
+    border-radius:5px;
+}
+
+nav ul li a:hover{
+    background:#38bdf8;
+    color:#000;
+}
+
+/* Home Section */
+section{
+    min-height:100vh;
+    padding:100px 50px;
+}
+
+#home{
+    background:linear-gradient(135deg,#1e293b,#0f172a);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+}
+
+#home h1{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+#home p{
+    font-size:20px;
+}
+
+/* Other Sections */
+#about{
+    background:#ffffff;
+}
+
+#services{
+    background:#e2e8f0;
+}
+
+#contact{
+    background:#ffffff;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#0f172a;
+}
+
+.content{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+    font-size:20px;
+    line-height:1.8;
+}
+
+/* Mobile Responsive */
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        padding:15px;
+    }
+
+    nav ul{
+        margin-top:10px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    nav ul li{
+        margin:10px;
+    }
+
+    #home h1{
+        font-size:35px;
+    }
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+    <div class="logo">My Website</div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section id="home">
+    <h1>Responsive Landing Page</h1>
+    <p>Create beautiful and interactive websites using HTML, CSS and JavaScript.</p>
+</section>
+
+<section id="about">
+    <h2>About Us</h2>
+    <div class="content">
+        <p>
+            This is a responsive landing page with a fixed navigation menu.
+            The menu changes color when the page is scrolled and includes
+            hover effects for each menu item.
+        </p>
+    </div>
+</section>
+
+<section id="services">
+    <h2>Services</h2>
+    <div class="content">
+        <p>✔ Web Development</p>
+        <p>✔ Responsive Website Design</p>
+        <p>✔ Front-End Development</p>
+        <p>✔ UI/UX Design</p>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <div class="content">
+        <p>Email: example@gmail.com</p>
+        <p>Phone: +91 9876543210</p>
+        <p>Address: Andhra Pradesh, India</p>
+    </div>
+</section>
+
+<script>
+window.addEventListener("scroll", function(){
+    const navbar = document.getElementById("navbar");
+
+    if(window.scrollY > 50){
+        navbar.classList.add("sticky");
+    } else {
+        navbar.classList.remove("sticky");
+    }
+});
+</script>
+
+</body>
+</html>
